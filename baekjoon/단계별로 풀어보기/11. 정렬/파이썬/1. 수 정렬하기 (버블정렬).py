@@ -1,11 +1,11 @@
-N = int(input("입력: \n"))
+N = int(input("갯수 입력 :  \n"))
 
 M = []
 
 for i in range(N) :
-    M.append(int(input()))
+    M.append(int(input("입력 : ")))
 
-
+# Bubble Sort
 for i in range(len(M)) :
     for j in range(len(M)) :
         if M[i] < M[j] :
