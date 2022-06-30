@@ -4,7 +4,7 @@ using namespace std;
 
 int main(void)
 {
-	ios::sync_with_stdio(false);
+	ios::sync_with_stdio(false);    
 	cin.tie(NULL);
 
 	int arr[10001] = { 0, };
