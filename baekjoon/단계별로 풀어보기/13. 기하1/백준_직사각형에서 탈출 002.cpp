@@ -14,5 +14,5 @@ int main() {
         result = y;
     if (h - y < result)
         result = h - y;
-    cout << result << '\n';
+    cout << result << '\n'; 
 }
