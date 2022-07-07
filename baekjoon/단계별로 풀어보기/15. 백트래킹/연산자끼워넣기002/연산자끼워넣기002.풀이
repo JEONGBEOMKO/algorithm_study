@@ -1,0 +1,50 @@
+알고리즘 흐름도 
+입력받기 -> DFS로 연산한 값을 계속하여 넣어준다. -> 깊이는 1부터 시작
+
+STEP 1 코드로 구성
+static int N;
+static int max = Integer.MIN_VALUE;
+static int min = Integer.MAX_VALUE;
+static ArrayList<Integer> num = new ArrayList<>();
+static ArrayList<Integer> opr = new ArrayList<>();
+
+StringTokenizer str1 = new StringTokenizer(br.readLine());
+StringTokenizer str2 = new StringTokenizer(br.readLine());
+
+N : 가장 먼저 받는 변수로 배열이나 얼마나 반복을 할지 알려주는 역할을 한다.
+max, min : 우리가 결과로 출력할 최댓값, 최솟값을 담을 변수 역할을 한다.
+num, opr : 각각 숫자와 연산자를 담는 ArrayList이다. (여기서 배열로 선언해도 크게 상관이없다.
+str1, str2 : 각각 숫자와 연산자를 입력받아 "공백"을 기준으로 나누어 num, opr에 값을 넣어주는 역할을 한다.
+
+STEP2 DFS FOR문의 이해
+
+이 부분이 사실 dfs의 핵심이라고 볼 수 있다.  이 부분을 얼마나 잘 짜느냐가 dfs의 결과를 좌우하게 된다.
+그러면 저희는 이번 dfs에는 어떠한 방식으로 구현을 할지 생각해 봐야 한다. 어떠한 것을 depth로 지정할 것인가. dfs의 인자로 무엇을 받아야 하는 것인가이다. 
+
+- 어떠한 것을 depth로 지정한 것인가?
+ 여기서는 숫자, 연산자, 결괏값(최소, 최대) 이 정도가 된다.  그런데 이때 결괏값은 depth로 지정할 수 없다는 것을 알 것이다.  왜냐하면, 어떻게 될지 저희가 예측하기 힘들기 때문이다. 
+ 그러면이제 숫자와 연산자 중에 어떠한 것을 depth로 잡을지 고민해야 한다. 하나씩 대입하여 풀어보면 되지만 여기서는 숫자로 지정한다.3 + 4 * 5 이런 식으로 진행된다면 마지막은 숫자가 되기에)
+ 
+ -dfs 인자는 무엇으로 지정할 것인가.
+ depth 즉, 숫자들의 인덱스를 넣어주면 된다. 여기서 인자로 넣어줄 값은 연산된 값을 인자로 넣어주어 쉽게 풀이할 수 있다.
+ 
+ public static void main(String[] args) throws IOException {
+ 									dfs(num.get(0), 1); 	
+ }
+ 
+ public static void dfs(int a, int depth) {
+ 	for(int i = 0; i < 4; i++) {
+ 		if(opr.get(i)>0) {
+ 			opr.set(i, opr.get(i)-1);
+ 			
+ 			switch(i) {
+ 				case 0:dfs(a+num.get(depth), depth+1); break;
+ 				case 1:dfs(a-num.get(depth), depth+1); break;
+ 				case 2:dfs(a*num.get(depth), depth+1); break;
+ 				case 3:dfs(a/num.get(depth), depth+1); break;
+			}
+			
+			opr.set(i, opr.get(i)+1);
+			}
+		}
+}
