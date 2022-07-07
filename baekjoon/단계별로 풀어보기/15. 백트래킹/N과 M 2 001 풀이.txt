@@ -1,0 +1,33 @@
+조합은 순열과 달리 중복되면 안되므로 idx(시작점)이 필요하다.
+다음 cnt(count)로 넘어갈 때 이전에 건든 작은 숫자를 건들지 않도록 하기 위해 idx가 있는 것이다.
+
+<이해>
+1.cnt = 0, idx = 0 , i = 0
+visited = {1} // 앞으로 visited에는 true인 값을 표시한다(실제는 bool타입)
+2.for문으로 들어가서 i = idx = 1 부터 시작
+cnt = 1, idx = 1, i = 1
+visited = {1,2}
+3.for문으로 들어가서 i = idx = 2부터 시작
+cnt = 2, idx = 2, i = 2
+visited = {1,2,3}
+4. cnt = 3, 출력
+
+5. DFS(cnt+1, i + 1)로 돌아온다.
+cnt = 2, idx = 2, i = 2
+visited[2] = false;
+
+6. cnt = 2, i =3
+visited = {1,2,4}
+7.cnt = 3, 출력
+
+8. DFS(cnt + 1, i + 1); 로 돌아온다.
+cnt = 2, idx = 2, i = 3
+visited[3] = false;
+
+9. cnt = 2, i = 4
+visited = {1,2,5}
+10.cnt = 3, 출력
+
+11. cnt = 2, idx = 2, i = 4
+ visited[4] = false;
+ for문이 끝남

@@ -20,4 +20,23 @@ void DFS(int cnt, int idx) {
         Print();
         return;
     }
+
+    for(int i = idx; i < n; i++) {
+        if(visited[i]) continue;
+        visited[i] = true;
+
+        DFS(cnt + 1, i+1);
+        visited[i] = false;
+    }
+}
+
+
+int main(void){
+    cin >> n >> m;
+    for(int i = 0; i < n; i++){
+        arr[i] = i+1;
+        visited[i] = false;
+    }
+
+    DFS(0,0);
 }
