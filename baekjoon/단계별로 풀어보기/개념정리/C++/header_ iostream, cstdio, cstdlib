@@ -1,0 +1,26 @@
+c++ 헤더(header) 파일
+
+c++에서 헤더 파일은 확장자를 사용하지 않는다.
+
+기존 헤더를 대신하는 새로운 헤더 파일을 제공한다.
+
+<stid.h> -> <cstdio>
+
+<stdlib.h> -> <cstdlib>
+
+* 기존 c헤더보다 새로운 헤더 형태 사용을 권장한다.
+
+#include < algorithm>
+// #include <stdio.h>  // 사용가능하지만 <cstdio> 사용을 권장함.
+
+#include <cstdio>
+{
+    printf("#d\n", std:max(1,2));
+}
+,,,
+
+
+stdio.h 와 cstdio의 차이
+
+<stdio.h>
+printf()등의 표준 함수가 std 이름 공간에 있다.
