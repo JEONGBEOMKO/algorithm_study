@@ -1,0 +1,94 @@
+Array.sort메서드는 2개의 인자를 받는다. 일반적으로 쓰는 위 코드의 경우 인자를 1개만 전달하면 나머지 하나의 인자는 default 초기값으로 적용되어 정렬된다.
+
+Array.sort(arr, Comparator<T>)
+Comparator을 사용하면 된다. 해당 인자를 즉석으로 만들어서 적용해주면 된다. 
+
+
+Array.sort(arr, new Comperator<String[]>(){
+    @Overrride
+    public int compare(String[] s1, String s2) {
+        if(s1[0] == s1[0]) {
+            return 1;
+        }else {
+            return integer.parseInt(s1[0]) - Integer.parseInt(s2[0]);
+        }
+    }
+});
+
+Array.sort(arr, new Comparator<String>){
+    @Overrride
+    public int compare (String s1, String s2) {
+        //1. 길이순
+        //2. 사전순
+    } 
+}
+
+Array.sort(arr, new Comparator<T>)는 인자를 2개를 받고 위의 문제에서는 기존의 규칙이 아닌 새로운 규칙으로 정렬 @override(오버 라이딩)을 통해
+Comparator에 있는 메서드인 compare를 재정의
+
+Arrays.sort(arr,new Comparator <String>(){
+    @Overrride
+    public int compare(String s1, String s2) {
+        if(s1.length() == s2.length()){
+            return s1.compare(s2);
+        }else{
+            return s1.length() - s2.length();
+        }
+    }
+});
+
+두 문자열 길이가 다르다면 오름차순으로 문자열을 정리, 두 문자열의 길이가 같다면 사전 순으로 정렬
+
+System.out.println(arr[0]);
+for(int i = 1; i < N; i++){
+    if(arr[i].equals(arr[i-1])) continue;
+}
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Arrays.sort() 메소드 안에는 두 객체(원소)를 비교하여 위치를 바꿀지 말지 판단하면서 정렬을 한다.
+기본적으로 Comparator는 객체를 비교할 수 있도록 해주는 인터페이스. 봍총 int, char, double 등의 자바에서 제공하는 자료형들은 비교가 가능하지만, 여러분이 사용자 클래스를 만들어 비교한다거나, 
+특정 규칙에 의해 비료를 하고 싶은 경우에는 Comparator를 구현.
+
+<? super T> 는 상속관계에 있는 타입만 자료형으로 받겠다는 의미이고, 이 말인 즉 T타입이 자식클래스가 되고, T의 상속관계에 있는 타입까지만
+허용하겠다는 의미.
+
+T = Type을 의미  객체, 자료형 등의 다양한 타입 중 하나를 설정 할 수 있다는 것이다.
+
+정렬할 배열의 타입은 String 이 될 것이다. 
+
+String[] arr = new String[N];
+
+Arrays.sort(arr, new Comparator<String>(){
+    @Overrride
+    public int compare (String s1, String s2){
+        /*
+        정렬방법 구현
+        */        
+    }
+});
+
+compare 메소드 리턴 타입이 왜 int 형이냐고 한다면, 기본적으로 compare 메소드는 3가지 리턴 값에 의해 위치를 바꿀지 결정. 
+- 양의 정수
+- 0 
+- 음의 정수
+
+기본적으로 양수일경우 Array.sort()에서 정렬 알고리즘에 의해 위치를 바꾸고, 0이나 음의 정수인 경우는 두 객체의 위치는 바뀌지 않는다.
+예로들어{2,1,3} 이라는 배열이 있고, public int compare(int a1, int a2){return a1 - a2}
+
+String[] arr = new String[N];
+
+Arrays.sort(arr, new Comparator<String>(){
+    public int compare(Stinr s1, String s2){
+        if(s1.length()== s2.length(){
+            return s1.compareTo(s2);
+        }
+        else{
+            return s1.length()-s2.length();
+        }
+    }
+});
+
+
+
+
