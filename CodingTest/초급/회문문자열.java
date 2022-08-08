@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 
 import java.util.Scanner;
 class 회문문자열 {

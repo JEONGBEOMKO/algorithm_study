@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 class 문장속단어002 {
    public String solution(String str) {

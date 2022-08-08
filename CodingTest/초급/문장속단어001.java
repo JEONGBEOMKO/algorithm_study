@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 import java.lang.*;
 class 문장속단어001 {

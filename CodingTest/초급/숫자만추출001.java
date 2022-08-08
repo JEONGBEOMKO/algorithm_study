@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 class 숫자만추출001 {
     public int solution(String s){

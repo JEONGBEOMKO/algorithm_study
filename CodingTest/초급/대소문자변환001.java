@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 class 대소문자변환001 {
     public String solution(String str){ //solution이라는 함수를 주고 입력을 매개변수로 넘어옴 

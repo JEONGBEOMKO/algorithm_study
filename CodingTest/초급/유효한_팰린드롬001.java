@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 //found7, time: study; Yduts; emit, 7Dnuof
 class 유효한_팰린드롬001 {

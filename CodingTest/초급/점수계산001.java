@@ -1,4 +1,4 @@
-package CodingTest;
+package CodingTest.초급;
 import java.util.*;
 class 점수계산001 {
     public int solution(int n , int[] arr){ // n : 정수 , arr에 저장되어있음
